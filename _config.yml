@@ -1,6 +1,4 @@
 theme: jekyll-theme-midnight
-title: "Makoto Sugita"
-description: "Independent Security Researcher / Builder of unconventional security tools"
 markdown: kramdown
 plugins:
   - jekyll-feed
