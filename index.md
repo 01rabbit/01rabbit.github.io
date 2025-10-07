@@ -1,4 +1,3 @@
-# Makoto Sugita (aka Mr. Rabbit)
 
 Independent Security Researcher (hobbyist)
 

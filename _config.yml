@@ -1,6 +1,6 @@
 theme: minima
-title: "Makoto Sugita (aka Mr. Rabbit)"
-description: "Independent Security Researcher / Developer of Azazel System"
+title: "Makoto Sugita"
+description: "Independent Security Researcher / Builder of unconventional security tools"
 markdown: kramdown
 plugins:
   - jekyll-feed
