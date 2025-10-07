@@ -12,6 +12,26 @@ Independent Security Researcher (hobbyist)
 - Concept: “Delay to win” — deceive, contain, and buy time. Gateway that absorbs attacks and orchestrates tactical delaying actions.
 - Tech: Suricata, OpenCanary, Vector, Python (Scapy), Mattermost alerts, iptables/nftables, tc.
 
+### Azazel-Pi
+
+![Azazel-Pi](https://01rabbit.github.io/Azazel/assets/images/azazel-pi-prototype.jpg)
+
+- GitHub: [https://github.com/01rabbit/Azazel-Pi](https://github.com/01rabbit/Azazel-Pi)
+- Concept: “Azazel-Pi” — a Raspberry Pi–based, rapid-deploy SOC/NOC gateway designed for disaster and emergency environments.
+- Purpose: Acts as a “Cyber Scapegoat Gateway” that absorbs and delays attacks to protect critical services, with easy deployment for municipalities and small organizations.
+- Use Cases: Emergency shelters, small-scale SOC/NOC operations, rapid network defense in resource-limited settings.
+- Recognition: Presented in Japan and internationally as an example of sustainable active cyber defense and tactical delaying action.
+
+### Azazel-Zero
+
+![Azazel-Zero](https://01rabbit.github.io/Azazel/assets/images/azazel-zero-prototype.jpg)
+
+- GitHub: [https://github.com/01rabbit/Azazel-Zero](https://github.com/01rabbit/Azazel-Zero)
+- Concept: “Azazel-Zero” — a compact, USB-OTG Raspberry Pi Zero–based countermeasure gadget designed as a stealthy decoy and portable network responder.
+- Purpose: Offer a low-power, highly portable deception device that exposes believable services, collects telemetry, and executes tactical delaying actions in constrained or covert deployments.
+- Use Cases: Field exercises, red-team support, portable deception during on-site assessments, quick-deploy educational demos.
+- Recognition: Shown in practical demos and workshops; valued for its portability and minimal footprint in constrained environments.
+
 ## PAKURI Series — Pentesting Automation Frameworks
 
 ### PAKURI
@@ -58,11 +78,36 @@ Independent Security Researcher (hobbyist)
 
 ## Presentations
 
-- 2019 - [AVTOKYO HIVE - PAKURI](https://en.avtokyo.org/avtokyo2019/event) / [SECCON YOROZU - PAKURI](https://www.seccon.jp/2019/akihabara/#yorozu)
-- 2020 - [🇸🇬Black Hat Asia Arsenal - PAKURI](https://www.blackhat.com/asia-20/arsenal/schedule/index.html#pakuri-penetration-test-achieve-knowledge-unite-rapid-interface-19270) / [AVTOKYO HIVE - PAKURI2](https://www.avtokyo.org/2020/event)
-- 2023 - [SECCON Open Conference 2022 - KaliPAKU](https://www.seccon.jp/2022/ep230211.html#d2-t3) / [CODEBLUE CyberTAMAGO - KaliPAKU](https://cybertamago.org/tools_ja.php#kalipaku) / [CODEBLUE CyberTAMAGO - BOCCHI](https://cybertamago.org/tools_ja.php#bocchi)/ [AVTOKYO HIVE - BOCCHI](https://www.avtokyo.org/avtokyo2023/events) / [SECCON Open Conference 2023 - BOCCHI](https://www.seccon.jp/2023/ep231223.html#d1-t8)
-- 2024 - [CODEBLUE CyberTAMAGO - Babbly](https://cybertamago.org/tools_ja.php#babbly) / [AVTOKYO HIVE - Babbly](https://www.avtokyo.org/avtokyo2024/events)
-- 2025 - [BSides Tokyo - 御調子門：Azazel System](https://bsides.tokyo/) / [🇺🇸BSides Las Vegas - Azazel System](https://bsideslv.org/talks#8XRRGH) / [🇺🇸Black Hat USA Arsenal - Azazel System](https://www.blackhat.com/us-25/arsenal/schedule/index.html#azazel-system-tactical-delaying-action-via-the-cyber-scapegoat-gateway-45642) / [🇨🇦SecTor Arsenal - Azazel System](https://www.blackhat.com/sector/2025/arsenal/schedule/index.html#azazel-system-tactical-delaying-action-via-the-cyber-scapegoat-gateway-47770) / CODEBLUE bluebox
+### 2019
+
+- [🇯🇵 AVTOKYO HIVE - PAKURI](https://en.avtokyo.org/avtokyo2019/event)
+- [🇯🇵 SECCON YOROZU - PAKURI](https://www.seccon.jp/2019/akihabara/#yorozu)
+
+### 2020
+
+- [🇸🇬 Black Hat Asia Arsenal - PAKURI](https://www.blackhat.com/asia-20/arsenal/schedule/index.html#pakuri-penetration-test-achieve-knowledge-unite-rapid-interface-19270)
+- [🇯🇵 AVTOKYO HIVE - PAKURI2](https://www.avtokyo.org/2020/event)
+
+### 2023
+
+- [🇯🇵 SECCON Open Conference 2022 - KaliPAKU](https://www.seccon.jp/2022/ep230211.html#d2-t3)
+- [🇯🇵 CODEBLUE CyberTAMAGO - KaliPAKU](https://cybertamago.org/tools_ja.php#kalipaku)
+- [🇯🇵 CODEBLUE CyberTAMAGO - BOCCHI](https://cybertamago.org/tools_ja.php#bocchi)
+- [🇯🇵 AVTOKYO HIVE - BOCCHI](https://www.avtokyo.org/avtokyo2023/events)
+- [🇯🇵 SECCON Open Conference 2023 - BOCCHI](https://www.seccon.jp/2023/ep231223.html#d1-t8)
+
+### 2024
+
+- [🇯🇵 CODEBLUE CyberTAMAGO - Babbly](https://cybertamago.org/tools_ja.php#babbly)
+- [🇯🇵 AVTOKYO HIVE - Babbly](https://www.avtokyo.org/avtokyo2024/events)
+
+### 2025
+
+- [🇯🇵 BSides Tokyo - 御調子門：Azazel System](https://bsides.tokyo/)
+- [🇺🇸 BSides Las Vegas - Azazel System](https://bsideslv.org/talks#8XRRGH)
+- [🇺🇸 Black Hat USA Arsenal - Azazel System](https://www.blackhat.com/us-25/arsenal/schedule/index.html#azazel-system-tactical-delaying-action-via-the-cyber-scapegoat-gateway-45642)
+- [🇨🇦 SecTor Arsenal - Azazel System](https://www.blackhat.com/sector/2025/arsenal/schedule/index.html#azazel-system-tactical-delaying-action-via-the-cyber-scapegoat-gateway-47770)
+- 🇯🇵 CODEBLUE bluebox - Azazel-Pi
 
 ---
 
