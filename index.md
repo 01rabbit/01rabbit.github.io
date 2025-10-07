@@ -8,7 +8,7 @@ Independent Security Researcher (hobbyist)
 
 ## Azazel Series — Cyber Scapegoat Gateway
 
-- GitHub: https://github.com/01rabbit/Azazel
+- GitHub: [https://github.com/01rabbit/Azazel](https://github.com/01rabbit/Azazel)
 - Concept: “Delay to win” — deceive, contain, and buy time. Gateway that absorbs attacks and orchestrates tactical delaying actions.
 - Tech: Suricata, OpenCanary, Vector, Python (Scapy), Mattermost alerts, iptables/nftables, tc.
 
@@ -17,7 +17,8 @@ Independent Security Researcher (hobbyist)
 ### PAKURI
 
 ![pakuri-banner](https://raw.githubusercontent.com/01rabbit/PAKURI/master/img/pakuri-banner.png)
-- GitHub: https://github.com/01rabbit/PAKURI
+
+- GitHub: [https://github.com/01rabbit/PAKURI](https://github.com/01rabbit/PAKURI)
 - Concept: “Numeric Keypad Navigation System” — transforms Kali-based tools into a fully navigable TUI controlled by just the keypad.
 - Purpose: Streamlines penetration testing via intuitive, semi-automated workflows.
 - Use Cases: Red/Blue team simulations, beginner training, fast prototyping.
@@ -26,7 +27,8 @@ Independent Security Researcher (hobbyist)
 ### KaliPAKU
 
 ![KaliPAKU-banner](https://raw.githubusercontent.com/01rabbit/KaliPAKU/main/img/KaliPAKU_logo.png)
-- GitHub: https://github.com/01rabbit/KaliPAKU
+
+- GitHub: [https://github.com/01rabbit/KaliPAKU](https://github.com/01rabbit/KaliPAKU)
 - Concept: “Type-22 Karipaku” — a training-focused, keypad-navigable launcher that simplifies pentesting workflows by assigning 3–5 digit codes to Kali Linux tools.
 - Purpose: Makes learning and practicing penetration testing accessible, fast, and repeatable—ideal for beginners, educators, and validation teams.
 - Use Cases: Red/Blue team exercises, classroom training, skill maintenance, and attack simulation.
@@ -35,7 +37,8 @@ Independent Security Researcher (hobbyist)
 ### BOCCHI — Chat-driven Penetration Testing Bot
 
 ![BOCCHI-banner](https://raw.githubusercontent.com/01rabbit/BOCCHI/main/images/BOCCHI_logo.png)
-- GitHub: https://github.com/01rabbit/BOCCHI
+
+- GitHub: [https://github.com/01rabbit/BOCCHI](https://github.com/01rabbit/BOCCHI)
 - Concept: “Type-23 BOCCHI” — a Mattermost-integrated chatbot that turns natural language into operational pentest commands.
 - Purpose: Democratize access to reconnaissance and vulnerability scanning through chat-based interactions.
 - Use Cases: Solo pentesters, mobile-first workflows, red team support, Mattermost-based ops automation.
@@ -44,7 +47,8 @@ Independent Security Researcher (hobbyist)
 ### Babbly — Voice-Guided Pentest Assistant
 
 ![Babbly-banner](https://raw.githubusercontent.com/01rabbit/Babbly/main/images/Babbly_banner.png)
-- GitHub: https://github.com/01rabbit/Babbly
+
+- GitHub: [https://github.com/01rabbit/Babbly](https://github.com/01rabbit/Babbly)
 - Concept: “Type-24 Babbly” — a penetration testing tool that embraces *Artificial Incompetence* to achieve safe, offline voice-guided operation.
 - Purpose: Allows users to conduct tests by voice without relying on AI or constant screen interaction, making it ideal for constrained environments.
 - Use Cases: Air-gapped environments, EMP-hardened zones, hands-free security ops, visually impaired support.
@@ -70,9 +74,9 @@ I am an independent security researcher and former penetration tester who now de
 
 ## Contact & Social
 
-- X (Twitter): https://x.com/01ra66it
-- GitHub: https://github.com/01rabbit
-- LinkedIn: www.linkedin.com/in/makoto-sugita-b56542208
+- X (Twitter): [https://x.com/01ra66it](https://x.com/01ra66it)
+- GitHub: [https://github.com/01rabbit](https://github.com/01rabbit)
+- LinkedIn: [https://www.linkedin.com/in/makoto-sugita-b56542208](https://www.linkedin.com/in/makoto-sugita-b56542208)
 
 ---
 
