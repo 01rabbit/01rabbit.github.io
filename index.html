@@ -255,10 +255,15 @@
       padding: .85rem 1rem;
       background: var(--bg-3);
       border: 1px solid var(--border);
+      border-left: 2px solid transparent;
       border-radius: 4px;
-      transition: border-color .2s, background .2s;
+      transition: border-color .25s, border-left-color .25s, background .25s;
     }
-    .proj:hover { border-color: var(--green); background: rgba(63,185,80,.04); }
+    .proj:hover {
+      border-color: rgba(63,185,80,.3);
+      border-left-color: var(--green);
+      background: rgba(63,185,80,.04);
+    }
 
     .proj-head {
       display: flex;
@@ -293,6 +298,11 @@
       padding: .1rem .4rem;
       border-radius: 2px;
       border: 1px solid var(--border);
+    }
+    .tech.conf {
+      color: var(--yellow);
+      border-color: rgba(227,179,65,.4);
+      background: rgba(227,179,65,.06);
     }
 
     /* ── TALKS ───────────────────────────────────────────── */
@@ -564,7 +574,7 @@
             <div class="tech-stack">
               <span class="tech">Kali Linux</span>
               <span class="tech">TUI</span>
-              <span class="tech">BH Asia 2020</span>
+              <span class="tech conf">BH Asia 2020</span>
             </div>
           </div>
 
@@ -576,7 +586,7 @@
             <p class="proj-desc">Training-focused launcher with 3–5 digit codes. Conforms to NIST SP 800-115.</p>
             <div class="tech-stack">
               <span class="tech">Training</span>
-              <span class="tech">NIST SP 800-115</span>
+              <span class="tech conf">NIST SP 800-115</span>
             </div>
           </div>
 
