@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01rabbit — Makoto Sugita</title>
+  <meta name="description" content="Makoto Sugita (Mr.Rabbit) — Independent Security Researcher & Tool Developer. Creator of Azazel, PAKURI, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #0d1117;
+      --bg-2:      #161b22;
+      --bg-3:      #21262d;
+      --border:    #30363d;
+      --text:      #e6edf3;
+      --muted:     #8b949e;
+      --green:     #3fb950;
+      --blue:      #58a6ff;
+      --purple:    #bc8cff;
+      --yellow:    #e3b341;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 52px;
+      background: rgba(13,17,23,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      gap: 2rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--green);
+      text-decoration: none;
+      margin-right: auto;
+      letter-spacing: -.02em;
+    }
+    .nav-brand::before { content: '> '; color: var(--muted); font-weight: 400; }
+
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .8rem;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--green); }
+
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      font-size: .7rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-title::before { content: '//'; color: var(--green); font-weight: 700; }
+    .section-title::after  { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 52px;
+      position: relative;
+    }
+
+    .hero-prompt {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: .75rem;
+    }
+    .hero-prompt .p-user { color: var(--green); }
+    .hero-prompt .p-host { color: var(--blue); }
+
+    .hero-name {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      color: var(--text);
+    }
+    .hero-alias { color: var(--green); }
+
+    .hero-sub {
+      margin-top: 1rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1.75rem;
+    }
+    .badge {
+      font-size: .7rem;
+      padding: .2rem .65rem;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .badge-green  { border-color: var(--green);  color: var(--green);  }
+    .badge-blue   { border-color: var(--blue);   color: var(--blue);   }
+    .badge-purple { border-color: var(--purple); color: var(--purple); }
+
+    .hero-social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 2.25rem;
+    }
+
+    .btn-social {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .8rem;
+      padding: .4rem .9rem;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      transition: color .2s, border-color .2s, background .2s;
+    }
+    .btn-social:hover {
+      color: var(--green);
+      border-color: var(--green);
+      background: rgba(63,185,80,.06);
+    }
+    .btn-social svg, .btn-social img { flex-shrink: 0; }
+
+    /* cursor blink */
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: var(--green);
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      color: var(--muted);
+      font-size: .65rem;
+      opacity: 0;
+      animation: fadeHint 1s 2s forwards;
+    }
+    @keyframes fadeHint {
+      from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+      to   { opacity: .5; transform: translateX(-50%) translateY(0); }
+    }
+    .scroll-hint-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--green), transparent);
+    }
+
+    /* ── PROJECTS ────────────────────────────────────────── */
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .series-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .card-titlebar {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .75rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-3);
+    }
+
+    .wdots { display: flex; gap: .35rem; }
+    .wd {
+      width: 11px; height: 11px; border-radius: 50%;
+    }
+    .wd-r { background: #f85149; }
+    .wd-y { background: var(--yellow); }
+    .wd-g { background: var(--green); }
+
+    .card-filename {
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    .card-body { padding: 1.25rem; }
+
+    .series-concept {
+      font-size: .78rem;
+      color: var(--muted);
+      font-style: italic;
+      padding-left: .85rem;
+      border-left: 2px solid var(--green);
+      margin-bottom: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .project-list { display: flex; flex-direction: column; gap: .75rem; }
+
+    .proj {
+      padding: .85rem 1rem;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: border-color .2s, background .2s;
+    }
+    .proj:hover { border-color: var(--green); background: rgba(63,185,80,.04); }
+
+    .proj-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: .3rem;
+    }
+
+    .proj-name {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .proj-name::before { content: '> '; color: var(--green); font-weight: 400; }
+
+    .proj-link {
+      font-size: .72rem;
+      color: var(--blue);
+      text-decoration: none;
+      opacity: .75;
+      transition: opacity .2s;
+    }
+    .proj-link:hover { opacity: 1; }
+
+    .proj-desc { font-size: .78rem; color: var(--muted); margin-bottom: .5rem; }
+
+    .tech-stack { display: flex; flex-wrap: wrap; gap: .3rem; }
+    .tech {
+      font-size: .68rem;
+      color: var(--muted);
+      background: var(--bg-2);
+      padding: .1rem .4rem;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── TALKS ───────────────────────────────────────────── */
+    .talks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem 3rem;
+    }
+
+    .year-block {}
+
+    .year-heading {
+      font-size: .72rem;
+      color: var(--green);
+      font-weight: 600;
+      letter-spacing: .12em;
+      margin-bottom: .75rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .year-heading::before { content: '#'; }
+
+    .talk-list {
+      border-left: 1px solid var(--border);
+      padding-left: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+    }
+
+    .talk {
+      display: flex;
+      gap: .6rem;
+      align-items: baseline;
+      font-size: .82rem;
+    }
+
+    .t-flag { flex-shrink: 0; font-size: .95rem; }
+    .t-link { color: var(--text); text-decoration: none; }
+    .t-link:hover .t-conf { color: var(--green); }
+    .t-conf { color: var(--blue); font-weight: 500; }
+    .t-title { color: var(--muted); }
+
+    /* ── PHOTOS ──────────────────────────────────────────── */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1rem;
+    }
+
+    .photo-wrap {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--bg-2);
+    }
+    .photo-wrap img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%);
+      transition: transform .35s, filter .35s;
+    }
+    .photo-wrap:hover img { transform: scale(1.05); filter: grayscale(0%); }
+    .photo-cap {
+      padding: .5rem .75rem;
+      font-size: .72rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── ABOUT ───────────────────────────────────────────── */
+    #about { padding-bottom: 3rem; }
+
+    .about-box {
+      max-width: 680px;
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.95;
+    }
+    .about-box strong { color: var(--text); }
+
+    /* ── CONTACT ─────────────────────────────────────────── */
+    #contact { padding-top: 3rem; padding-bottom: 4rem; }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .85rem;
+      padding: .55rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      transition: color .2s, border-color .2s, background .2s;
+    }
+    .btn-contact:hover {
+      color: var(--green);
+      border-color: var(--green);
+      background: rgba(63,185,80,.06);
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 2rem;
+      text-align: center;
+      font-size: .72rem;
+      color: var(--muted);
+    }
+    footer span { color: var(--green); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 720px) {
+      .series-grid { grid-template-columns: 1fr; }
+      .talks-grid  { grid-template-columns: 1fr; }
+      .nav-links   { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-brand">01rabbit</a>
+  <ul class="nav-links">
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#talks">talks</a></li>
+    <li><a href="#photos">photos</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <p class="hero-prompt">
+    <span class="p-user">mr.rabbit</span><span style="color:var(--muted)">@</span><span class="p-host">01rabbit</span><span style="color:var(--muted)">:~$</span> whoami
+  </p>
+  <h1 class="hero-name">
+    Makoto Sugita<br>
+    <span class="hero-alias">a.k.a. <span id="typewriter"></span><span class="cursor"></span></span>
+  </h1>
+  <p class="hero-sub">Independent Security Researcher &amp; Tool Developer</p>
+
+  <div class="hero-tags">
+    <span class="badge badge-green">Defensive Security</span>
+    <span class="badge badge-blue">Penetration Testing</span>
+    <span class="badge badge-purple">Open Source</span>
+    <span class="badge">Black Hat Arsenal</span>
+    <span class="badge">BSides LV</span>
+    <span class="badge">SECCON</span>
+    <span class="badge">SecTor</span>
+  </div>
+
+  <div class="hero-social">
+    <a href="https://github.com/01rabbit" class="btn-social" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      GitHub
+    </a>
+    <a href="https://x.com/01ra66it" class="btn-social" target="_blank" rel="noopener">
+      <img src="/assets/img/x_icon.png" width="13" height="13" alt="X" style="filter:invert(60%)">
+      @01ra66it
+    </a>
+    <a href="https://www.linkedin.com/in/makoto-sugita-b56542208" class="btn-social" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+  </div>
+
+  <div class="scroll-hint">
+    scroll
+    <div class="scroll-hint-line"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">projects</h2>
+  <div class="series-grid">
+
+    <!-- Azazel Series -->
+    <div class="series-card">
+      <div class="card-titlebar">
+        <div class="wdots">
+          <div class="wd wd-r"></div>
+          <div class="wd wd-y"></div>
+          <div class="wd wd-g"></div>
+        </div>
+        <span class="card-filename">azazel-series/</span>
+      </div>
+      <div class="card-body">
+        <p class="series-concept">"Delay to win" — deceive, contain, and buy time. Gateway that absorbs attacks and orchestrates tactical delaying actions.</p>
+        <div class="project-list">
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">Azazel</span>
+              <a href="https://github.com/01rabbit/Azazel" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+            </div>
+            <p class="proj-desc">Core gateway: detection + deception + delaying action engine.</p>
+            <div class="tech-stack">
+              <span class="tech">Suricata</span>
+              <span class="tech">OpenCanary</span>
+              <span class="tech">Python / Scapy</span>
+              <span class="tech">Mattermost</span>
+              <span class="tech">iptables / nftables</span>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">Azazel-Pi</span>
+              <a href="https://github.com/01rabbit/Azazel-Pi" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+            </div>
+            <p class="proj-desc">Raspberry Pi–based rapid-deploy SOC/NOC gateway for disaster and emergency environments.</p>
+            <div class="tech-stack">
+              <span class="tech">Raspberry Pi</span>
+              <span class="tech">Emergency Deploy</span>
+              <span class="tech">SOC / NOC</span>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">Azazel-Zero</span>
+              <a href="https://github.com/01rabbit/Azazel-Zero" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+            </div>
+            <p class="proj-desc">Compact USB-OTG Pi Zero gadget — stealthy decoy and portable network responder.</p>
+            <div class="tech-stack">
+              <span class="tech">Pi Zero</span>
+              <span class="tech">USB-OTG</span>
+              <span class="tech">Deception</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- PAKURI Series -->
+    <div class="series-card">
+      <div class="card-titlebar">
+        <div class="wdots">
+          <div class="wd wd-r"></div>
+          <div class="wd wd-y"></div>
+          <div class="wd wd-g"></div>
+        </div>
+        <span class="card-filename">pakuri-series/</span>
+      </div>
+      <div class="card-body">
+        <p class="series-concept">Penetration testing automation frameworks — from keypad-driven TUIs to voice and chat-guided operations.</p>
+        <div class="project-list">
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">PAKURI</span>
+              <a href="https://github.com/01rabbit/PAKURI" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+            </div>
+            <p class="proj-desc">Numeric Keypad Navigation System for Kali-based tools. <em>Black Hat Asia Arsenal 2020.</em></p>
+            <div class="tech-stack">
+              <span class="tech">Kali Linux</span>
+              <span class="tech">TUI</span>
+              <span class="tech">BH Asia 2020</span>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">KaliPAKU</span>
+              <a href="https://github.com/01rabbit/KaliPAKU" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+            </div>
+            <p class="proj-desc">Training-focused launcher with 3–5 digit codes. Conforms to NIST SP 800-115.</p>
+            <div class="tech-stack">
+              <span class="tech">Training</span>
+              <span class="tech">NIST SP 800-115</span>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">BOCCHI</span>
+              <a href="https://github.com/01rabbit/BOCCHI" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+            </div>
+            <p class="proj-desc">Mattermost chatbot: natural language → operational pentest commands.</p>
+            <div class="tech-stack">
+              <span class="tech">Mattermost</span>
+              <span class="tech">ChatBot</span>
+              <span class="tech">GPT</span>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">Babbly</span>
+              <a href="https://github.com/01rabbit/Babbly" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+            </div>
+            <p class="proj-desc">Voice-guided pentest assistant with <em>Artificial Incompetence</em> — fully offline, air-gap friendly.</p>
+            <div class="tech-stack">
+              <span class="tech">Voice</span>
+              <span class="tech">Offline</span>
+              <span class="tech">Air-gap</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TALKS -->
+<section id="talks">
+  <h2 class="section-title">presentations</h2>
+  <div class="talks-grid">
+
+    <div class="year-block">
+      <div class="year-heading">2025</div>
+      <div class="talk-list">
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://bsides.tokyo/" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">BSides Tokyo</span>
+            <span class="t-title"> — 御調子門：Azazel System</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇺🇸</span>
+          <a href="https://bsideslv.org/talks#8XRRGH" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">BSides Las Vegas</span>
+            <span class="t-title"> — Azazel System</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇺🇸</span>
+          <a href="https://www.blackhat.com/us-25/arsenal/schedule/index.html#azazel-system-tactical-delaying-action-via-the-cyber-scapegoat-gateway-45642" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">Black Hat USA Arsenal</span>
+            <span class="t-title"> — Azazel System</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇨🇦</span>
+          <a href="https://www.blackhat.com/sector/2025/arsenal/schedule/index.html#azazel-system-tactical-delaying-action-via-the-cyber-scapegoat-gateway-47770" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">SecTor Arsenal</span>
+            <span class="t-title"> — Azazel System</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <span class="t-conf">CODEBLUE bluebox</span>
+          <span class="t-title"> — Azazel-Pi</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-block">
+      <div class="year-heading">2024</div>
+      <div class="talk-list">
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://cybertamago.org/tools_ja.php#babbly" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">CODEBLUE CyberTAMAGO</span>
+            <span class="t-title"> — Babbly</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://www.avtokyo.org/avtokyo2024/events" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">AVTOKYO HIVE</span>
+            <span class="t-title"> — Babbly</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-block">
+      <div class="year-heading">2023</div>
+      <div class="talk-list">
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://www.seccon.jp/2022/ep230211.html#d2-t3" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">SECCON Open Conf 2022</span>
+            <span class="t-title"> — KaliPAKU</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://cybertamago.org/tools_ja.php#kalipaku" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">CODEBLUE CyberTAMAGO</span>
+            <span class="t-title"> — KaliPAKU</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://cybertamago.org/tools_ja.php#bocchi" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">CODEBLUE CyberTAMAGO</span>
+            <span class="t-title"> — BOCCHI</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://www.avtokyo.org/avtokyo2023/events" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">AVTOKYO HIVE</span>
+            <span class="t-title"> — BOCCHI</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://www.seccon.jp/2023/ep231223.html#d1-t8" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">SECCON Open Conf 2023</span>
+            <span class="t-title"> — BOCCHI</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-block">
+      <div class="year-heading">2020</div>
+      <div class="talk-list">
+        <div class="talk">
+          <span class="t-flag">🇸🇬</span>
+          <a href="https://www.blackhat.com/asia-20/arsenal/schedule/index.html#pakuri-penetration-test-achieve-knowledge-unite-rapid-interface-19270" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">Black Hat Asia Arsenal</span>
+            <span class="t-title"> — PAKURI</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://www.avtokyo.org/2020/event" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">AVTOKYO HIVE</span>
+            <span class="t-title"> — PAKURI2</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-block">
+      <div class="year-heading">2019</div>
+      <div class="talk-list">
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://en.avtokyo.org/avtokyo2019/event" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">AVTOKYO HIVE</span>
+            <span class="t-title"> — PAKURI</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://www.seccon.jp/2019/akihabara/#yorozu" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">SECCON YOROZU</span>
+            <span class="t-title"> — PAKURI</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section id="photos">
+  <h2 class="section-title">photos</h2>
+  <div class="photo-grid">
+    <div class="photo-wrap">
+      <img src="/assets/profile.jpeg" alt="Profile Photo" loading="lazy">
+      <div class="photo-cap">Professional headshot</div>
+    </div>
+    <div class="photo-wrap">
+      <img src="/assets/bhusa.jpeg" alt="Black Hat USA 2025" loading="lazy">
+      <div class="photo-cap">Black Hat USA Arsenal 2025 — Las Vegas</div>
+    </div>
+    <div class="photo-wrap">
+      <img src="/assets/bsideslv.jpeg" alt="BSides LV 2025" loading="lazy">
+      <div class="photo-cap">BSides Las Vegas 2025 — Proving Ground</div>
+    </div>
+    <div class="photo-wrap">
+      <img src="/assets/sector.jpeg" alt="SecTor 2025" loading="lazy">
+      <div class="photo-cap">SecTor Canada 2025 — Arsenal Showcase</div>
+    </div>
+    <div class="photo-wrap">
+      <img src="/assets/IMG_5213.jpg" alt="Azazel-Zero testing" loading="lazy">
+      <div class="photo-cap">Final testing of Azazel-Zero before deployment</div>
+    </div>
+    <div class="photo-wrap">
+      <img src="/assets/azazel.png" alt="Goat Selfie" loading="lazy">
+      <div class="photo-cap">"Deploying scapegoats since 2020 — and yes, it works."</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">about</h2>
+  <div class="about-box">
+    <p>
+      I am an <strong>independent security researcher</strong> and former penetration tester who now
+      develops security tools as a personal research endeavor. My work has been showcased at conferences
+      including <strong>Black Hat Asia Arsenal</strong>, <strong>BSides Tokyo</strong>, <strong>SECCON</strong>,
+      and more recently at <strong>BSides Las Vegas</strong>, <strong>Black Hat USA Arsenal</strong>,
+      and <strong>SecTor Arsenal</strong>.
+    </p>
+    <br>
+    <p>
+      All of this activity is self-funded — which means the more I speak around the world, the more my
+      bank account suffers. As my follower count on X rises, so does my alcohol consumption, and that's
+      probably the most consistent metric in my career.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">contact</h2>
+  <div class="contact-links">
+    <a href="https://github.com/01rabbit" class="btn-contact" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      GitHub
+    </a>
+    <a href="https://x.com/01ra66it" class="btn-contact" target="_blank" rel="noopener">
+      <img src="/assets/img/x_icon.png" width="15" height="15" alt="X" style="filter:invert(60%)">
+      @01ra66it
+    </a>
+    <a href="https://www.linkedin.com/in/makoto-sugita-b56542208" class="btn-contact" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span>01rabbit</span> · Makoto Sugita · Independent Security Researcher
+</footer>
+
+<script>
+  (function () {
+    const words = ['Mr.Rabbit', 'Security Researcher', 'Tool Developer', 'Mr.Rabbit'];
+    let wi = 0, ci = 0, del = false;
+    const el = document.getElementById('typewriter');
+
+    function tick() {
+      const w = words[wi % words.length];
+      el.textContent = del ? w.slice(0, --ci) : w.slice(0, ++ci);
+
+      let next = del ? 55 : 95;
+      if (!del && ci === w.length)  { next = 2200; del = true; }
+      else if (del && ci === 0)      { del = false; wi++; next = 350; }
+      setTimeout(tick, next);
+    }
+    tick();
+  })();
+</script>
+
+</body>
+</html>
