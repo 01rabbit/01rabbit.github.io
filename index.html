@@ -331,6 +331,18 @@
       background: rgba(227,179,65,.06);
     }
 
+    .proj-head-left { display: flex; align-items: baseline; gap: .4rem; }
+    .proj-archived {
+      font-size: .63rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: .05rem .35rem;
+      border-radius: 2px;
+      font-style: italic;
+      opacity: .7;
+    }
+    .proj.is-archived { opacity: .65; }
+
     /* ── TALKS ───────────────────────────────────────────── */
     .talks-grid {
       display: grid;
@@ -552,9 +564,12 @@
             </div>
           </div>
 
-          <div class="proj">
+          <div class="proj is-archived">
             <div class="proj-head">
-              <span class="proj-name">Azazel-Pi</span>
+              <div class="proj-head-left">
+                <span class="proj-name">Azazel-Pi</span>
+                <span class="proj-archived">archived</span>
+              </div>
               <a href="https://github.com/01rabbit/Azazel-Pi" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
             </div>
             <p class="proj-desc">Raspberry Pi–based rapid-deploy SOC/NOC gateway for disaster and emergency environments.</p>
@@ -565,9 +580,12 @@
             </div>
           </div>
 
-          <div class="proj">
+          <div class="proj is-archived">
             <div class="proj-head">
-              <span class="proj-name">Azazel-Zero</span>
+              <div class="proj-head-left">
+                <span class="proj-name">Azazel-Zero</span>
+                <span class="proj-archived">archived</span>
+              </div>
               <a href="https://github.com/01rabbit/Azazel-Zero" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
             </div>
             <p class="proj-desc">Compact USB-OTG Pi Zero gadget — stealthy decoy and portable network responder.</p>
@@ -575,6 +593,37 @@
               <span class="tech">Pi Zero</span>
               <span class="tech">USB-OTG</span>
               <span class="tech">Deception</span>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">Azazel-Edge</span>
+              <a href="https://github.com/01rabbit/Azazel-Edge" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+            </div>
+            <p class="proj-desc">Codename SENTINEL — deterministic edge SOC/NOC gateway with explainable decision-making and optional local AI assist (Ollama).</p>
+            <div class="tech-stack">
+              <span class="tech">Raspberry Pi</span>
+              <span class="tech">Suricata</span>
+              <span class="tech">Wazuh</span>
+              <span class="tech">Ollama</span>
+              <span class="tech">Flask</span>
+              <span class="tech conf">BH Arsenal 2026</span>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">Azazel-Gadget</span>
+              <a href="https://github.com/01rabbit/Azazel-Gadget" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+            </div>
+            <p class="proj-desc">Portable tactical defense gateway for untrusted Wi-Fi — modes: Portal / Shield / Scapegoat.</p>
+            <div class="tech-stack">
+              <span class="tech">Pi Zero 2 W</span>
+              <span class="tech">nftables</span>
+              <span class="tech">OpenCanary</span>
+              <span class="tech">Flask</span>
+              <span class="tech">e-paper</span>
             </div>
           </div>
 
@@ -644,6 +693,40 @@
               <span class="tech">Voice</span>
               <span class="tech">Offline</span>
               <span class="tech">Air-gap</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Phasmid -->
+    <div class="series-card">
+      <div class="card-titlebar">
+        <div class="wdots">
+          <div class="wd wd-r"></div>
+          <div class="wd wd-y"></div>
+          <div class="wd wd-g"></div>
+        </div>
+        <span class="card-filename">phasmid/</span>
+      </div>
+      <div class="card-body">
+        <p class="series-concept">Janus Eidolon System — local-only coercion-aware storage for controlled disclosure under compelled access and device seizure scenarios.</p>
+        <div class="project-list">
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">Phasmid</span>
+              <a href="https://github.com/01rabbit/Phasmid" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+            </div>
+            <p class="proj-desc">Two-slot encrypted storage architecture that separates visible disclosure from protected local state. Designed for field-risk evaluators and security researchers facing coercion or seizure scenarios.</p>
+            <div class="tech-stack">
+              <span class="tech">Python 3.10+</span>
+              <span class="tech">Argon2id</span>
+              <span class="tech">AES-GCM</span>
+              <span class="tech">TUI / CLI</span>
+              <span class="tech">Pi Zero 2 W</span>
+              <span class="tech">Local-only</span>
             </div>
           </div>
 
