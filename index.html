@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>01rabbit — Makoto Sugita</title>
-  <meta name="description" content="Makoto Sugita (Mr.Rabbit) — Independent Security Researcher & Tool Developer. Creator of Azazel, PAKURI, and more.">
+  <meta name="description" content="Makoto Sugita (Mr.Rabbit) — Independent security researcher and open-source security tool developer. Creator of Azazel System, Phasmid, PAKURI, and related defensive security tools.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -495,12 +495,13 @@
         Makoto Sugita<br>
         <span class="hero-alias">a.k.a. <span id="typewriter"></span><span class="cursor"></span></span>
       </h1>
-      <p class="hero-sub">Independent Security Researcher &amp; Tool Developer</p>
+      <p class="hero-sub">Independent Security Researcher &amp; Open-Source Security Tool Developer</p>
 
       <div class="hero-tags">
         <span class="badge badge-green">Defensive Security</span>
-        <span class="badge badge-blue">Penetration Testing</span>
+        <span class="badge badge-blue">Deception</span>
         <span class="badge badge-purple">Open Source</span>
+        <span class="badge">Edge SOC/NOC</span>
         <span class="badge">Black Hat Arsenal</span>
         <span class="badge">BSides LV</span>
         <span class="badge">SECCON</span>
@@ -552,10 +553,17 @@
           <div class="proj">
             <div class="proj-head">
               <span class="proj-name">Azazel</span>
-              <a href="https://github.com/01rabbit/Azazel" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+              <span>
+                <a href="https://01rabbit.github.io/Azazel/" class="proj-link" target="_blank" rel="noopener">[site ↗]</a>
+                <a href="https://github.com/01rabbit/Azazel" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+              </span>
             </div>
-            <p class="proj-desc">Core gateway: detection + deception + delaying action engine.</p>
+            <p class="proj-desc">Azazel System core gateway doctrine and tool family for delaying action, deception, and edge defense.</p>
             <div class="tech-stack">
+              <span class="tech conf">BH USA 2025</span>
+              <span class="tech conf">BSides LV 2025</span>
+              <span class="tech conf">SecTor 2025</span>
+              <span class="tech conf">CyberTAMAGO 2025</span>
               <span class="tech">Suricata</span>
               <span class="tech">OpenCanary</span>
               <span class="tech">Python / Scapy</span>
@@ -567,16 +575,21 @@
           <div class="proj">
             <div class="proj-head">
               <span class="proj-name">Azazel-Edge</span>
-              <a href="https://github.com/01rabbit/Azazel-Edge" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+              <span>
+                <a href="https://01rabbit.github.io/Azazel-Edge/" class="proj-link" target="_blank" rel="noopener">[site ↗]</a>
+                <a href="https://github.com/01rabbit/Azazel-Edge" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+              </span>
             </div>
-            <p class="proj-desc">Codename SENTINEL — deterministic edge SOC/NOC gateway with explainable decision-making and optional local AI assist (Ollama).</p>
+            <p class="proj-desc">Successor to Azazel-Pi — deterministic edge SOC/NOC gateway with explainable decision-making and optional local AI assist.</p>
             <div class="tech-stack">
+              <span class="tech conf">Azazel Successor</span>
               <span class="tech">Raspberry Pi</span>
               <span class="tech">Suricata</span>
-              <span class="tech">Wazuh</span>
               <span class="tech">Ollama</span>
               <span class="tech">Flask</span>
-              <span class="tech conf">BH Arsenal 2026</span>
+              <span class="tech">Edge SOC/NOC</span>
+              <span class="tech">Deterministic Control</span>
+              <span class="tech">Version: v0.1.2</span>
             </div>
           </div>
 
@@ -588,26 +601,37 @@
               </div>
               <a href="https://github.com/01rabbit/Azazel-Pi" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
             </div>
-            <p class="proj-desc">Raspberry Pi–based rapid-deploy SOC/NOC gateway for disaster and emergency environments.</p>
+            <p class="proj-desc">Archived prototype and predecessor of Azazel-Edge. Presented as an offline edge AI SOC/NOC gateway for constrained and emergency environments.</p>
             <div class="tech-stack">
               <span class="tech">Raspberry Pi</span>
               <span class="tech">Emergency Deploy</span>
               <span class="tech">SOC / NOC</span>
+              <span class="tech conf">BH Asia 2026</span>
+              <span class="tech conf">BSides Tokyo 2025</span>
+              <span class="tech conf">SecTor 2025</span>
+              <span class="tech conf">AVTOKYO 2025</span>
+              <span class="tech conf">CODE BLUE Bluebox 2025</span>
+              <span class="tech">Version: azazel-pi-eol-2026-05-16</span>
             </div>
           </div>
 
           <div class="proj">
             <div class="proj-head">
               <span class="proj-name">Azazel-Gadget</span>
-              <a href="https://github.com/01rabbit/Azazel-Gadget" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+              <span>
+                <a href="https://01rabbit.github.io/Azazel-Gadget/" class="proj-link" target="_blank" rel="noopener">[site ↗]</a>
+                <a href="https://github.com/01rabbit/Azazel-Gadget" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+              </span>
             </div>
             <p class="proj-desc">Portable tactical defense gateway for untrusted Wi-Fi — modes: Portal / Shield / Scapegoat.</p>
             <div class="tech-stack">
+              <span class="tech conf">CyberTAMAGO 2026</span>
               <span class="tech">Pi Zero 2 W</span>
               <span class="tech">nftables</span>
               <span class="tech">OpenCanary</span>
               <span class="tech">Flask</span>
               <span class="tech">e-paper</span>
+              <span class="tech">Version: v0.1.0</span>
             </div>
           </div>
 
@@ -619,7 +643,7 @@
               </div>
               <a href="https://github.com/01rabbit/Azazel-Zero" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
             </div>
-            <p class="proj-desc">Compact USB-OTG Pi Zero gadget — stealthy decoy and portable network responder.</p>
+            <p class="proj-desc">Archived predecessor of Azazel-Gadget — compact USB-OTG Pi Zero gadget for portable deception and local network response.</p>
             <div class="tech-stack">
               <span class="tech">Pi Zero</span>
               <span class="tech">USB-OTG</span>
@@ -655,6 +679,8 @@
               <span class="tech">Kali Linux</span>
               <span class="tech">TUI</span>
               <span class="tech conf">BH Asia 2020</span>
+              <span class="tech conf">AVTOKYO 2019/2020</span>
+              <span class="tech">Version: v2.0.0</span>
             </div>
           </div>
 
@@ -667,6 +693,9 @@
             <div class="tech-stack">
               <span class="tech">Training</span>
               <span class="tech conf">NIST SP 800-115</span>
+              <span class="tech conf">CyberTAMAGO 2023</span>
+              <span class="tech conf">SECCON 2022</span>
+              <span class="tech">Version: v1.0.8</span>
             </div>
           </div>
 
@@ -680,6 +709,10 @@
               <span class="tech">Mattermost</span>
               <span class="tech">ChatBot</span>
               <span class="tech">GPT</span>
+              <span class="tech conf">CyberTAMAGO 2023</span>
+              <span class="tech conf">AVTOKYO 2023</span>
+              <span class="tech conf">SECCON 2023</span>
+              <span class="tech">Version: v1.0.0</span>
             </div>
           </div>
 
@@ -693,6 +726,8 @@
               <span class="tech">Voice</span>
               <span class="tech">Offline</span>
               <span class="tech">Air-gap</span>
+              <span class="tech conf">CyberTAMAGO 2024</span>
+              <span class="tech conf">AVTOKYO 2024</span>
             </div>
           </div>
 
@@ -717,9 +752,12 @@
           <div class="proj">
             <div class="proj-head">
               <span class="proj-name">Phasmid</span>
-              <a href="https://github.com/01rabbit/Phasmid" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+              <span>
+                <a href="https://01rabbit.github.io/Phasmid/" class="proj-link" target="_blank" rel="noopener">[site ↗]</a>
+                <a href="https://github.com/01rabbit/Phasmid" class="proj-link" target="_blank" rel="noopener">[github ↗]</a>
+              </span>
             </div>
-            <p class="proj-desc">Two-slot encrypted storage architecture that separates visible disclosure from protected local state. Designed for field-risk evaluators and security researchers facing coercion or seizure scenarios.</p>
+            <p class="proj-desc">Coercion-aware local storage system that separates visible disclosure from protected local state. Designed for field-risk evaluators and security researchers facing compelled access or seizure scenarios.</p>
             <div class="tech-stack">
               <span class="tech">Python 3.10+</span>
               <span class="tech">Argon2id</span>
@@ -727,6 +765,7 @@
               <span class="tech">TUI / CLI</span>
               <span class="tech">Pi Zero 2 W</span>
               <span class="tech">Local-only</span>
+              <span class="tech">Version: v0.1.4</span>
             </div>
           </div>
 
@@ -743,40 +782,76 @@
   <div class="talks-grid">
 
     <div class="year-block">
+      <div class="year-heading">2026</div>
+      <div class="talk-list">
+        <div class="talk">
+          <span class="t-flag">🇸🇬</span>
+          <a href="https://blackhat.com/asia-26/arsenal/schedule/index.html#azazel-pi-offline-edge-ai-socnoc-gateway-with-mock-llm-scoring-and-ollama-fallback-50378" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">Black Hat Asia Arsenal</span>
+            <span class="t-title"> — Azazel-Pi</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://cybertamago.org/#:~:text=20%20%2D%2015%3A50-,Azazel%2DGadget,-Mr.%20Rabbit" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">CODE BLUE CyberTAMAGO</span>
+            <span class="t-title"> — Azazel-Gadget</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-block">
       <div class="year-heading">2025</div>
       <div class="talk-list">
         <div class="talk">
           <span class="t-flag">🇯🇵</span>
-          <a href="https://bsides.tokyo/" class="t-link" target="_blank" rel="noopener">
+          <a href="https://bsides.tokyo/2025/" class="t-link" target="_blank" rel="noopener">
             <span class="t-conf">BSides Tokyo</span>
-            <span class="t-title"> — 御調子門：Azazel System</span>
+            <span class="t-title"> — Azazel System (Azazel-Pi transition phase)</span>
           </a>
         </div>
         <div class="talk">
           <span class="t-flag">🇺🇸</span>
-          <a href="https://bsideslv.org/talks#8XRRGH" class="t-link" target="_blank" rel="noopener">
+          <a href="https://archive.bsideslv.org/2025/talks.html#8XRRGH" class="t-link" target="_blank" rel="noopener">
             <span class="t-conf">BSides Las Vegas</span>
             <span class="t-title"> — Azazel System</span>
           </a>
         </div>
         <div class="talk">
           <span class="t-flag">🇺🇸</span>
-          <a href="https://www.blackhat.com/us-25/arsenal/schedule/index.html#azazel-system-tactical-delaying-action-via-the-cyber-scapegoat-gateway-45642" class="t-link" target="_blank" rel="noopener">
+          <a href="https://blackhat.com/us-25/arsenal/schedule/index.html#azazel-system-tactical-delaying-action-via-the-cyber-scapegoat-gateway-45642" class="t-link" target="_blank" rel="noopener">
             <span class="t-conf">Black Hat USA Arsenal</span>
-            <span class="t-title"> — Azazel System</span>
+            <span class="t-title"> — Azazel System (Azazel-Pi transition phase)</span>
           </a>
         </div>
         <div class="talk">
           <span class="t-flag">🇨🇦</span>
-          <a href="https://www.blackhat.com/sector/2025/arsenal/schedule/index.html#azazel-system-tactical-delaying-action-via-the-cyber-scapegoat-gateway-47770" class="t-link" target="_blank" rel="noopener">
+          <a href="https://blackhat.com/sector/2025/arsenal/schedule/index.html#azazel-system-tactical-delaying-action-via-the-cyber-scapegoat-gateway-47770" class="t-link" target="_blank" rel="noopener">
             <span class="t-conf">SecTor Arsenal</span>
-            <span class="t-title"> — Azazel System</span>
+            <span class="t-title"> — Azazel System (Azazel-Pi transition phase)</span>
           </a>
         </div>
         <div class="talk">
           <span class="t-flag">🇯🇵</span>
-          <span class="t-conf">CODEBLUE bluebox</span>
-          <span class="t-title"> — Azazel-Pi</span>
+          <a href="https://cybertamago.org/#:~:text=15%3A10-,Azazel%20Series,-Mr.%20Rabbit" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">CODE BLUE CyberTAMAGO</span>
+            <span class="t-title"> — Azazel Series</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://archive.codeblue.jp/2025/results/results/#result-11" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">CODE BLUE Bluebox</span>
+            <span class="t-title"> — Azazel-Pi</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://www.avtokyo.org/avtokyo2025/timetable" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">AVTOKYO HIVE</span>
+            <span class="t-title"> — Azazel-Pi</span>
+          </a>
         </div>
       </div>
     </div>
@@ -786,15 +861,15 @@
       <div class="talk-list">
         <div class="talk">
           <span class="t-flag">🇯🇵</span>
-          <a href="https://cybertamago.org/tools_ja.php#babbly" class="t-link" target="_blank" rel="noopener">
-            <span class="t-conf">CODEBLUE CyberTAMAGO</span>
+          <a href="https://www.avtokyo.org/avtokyo2024/timetable" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">AVTOKYO HIVE</span>
             <span class="t-title"> — Babbly</span>
           </a>
         </div>
         <div class="talk">
           <span class="t-flag">🇯🇵</span>
-          <a href="https://www.avtokyo.org/avtokyo2024/events" class="t-link" target="_blank" rel="noopener">
-            <span class="t-conf">AVTOKYO HIVE</span>
+          <a href="https://cybertamago.org/projects#babbly" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">CODE BLUE CyberTAMAGO</span>
             <span class="t-title"> — Babbly</span>
           </a>
         </div>
@@ -806,37 +881,37 @@
       <div class="talk-list">
         <div class="talk">
           <span class="t-flag">🇯🇵</span>
-          <a href="https://www.seccon.jp/2022/ep230211.html#d2-t3" class="t-link" target="_blank" rel="noopener">
-            <span class="t-conf">SECCON Open Conf 2022</span>
-            <span class="t-title"> — KaliPAKU</span>
-          </a>
-        </div>
-        <div class="talk">
-          <span class="t-flag">🇯🇵</span>
-          <a href="https://cybertamago.org/tools_ja.php#kalipaku" class="t-link" target="_blank" rel="noopener">
-            <span class="t-conf">CODEBLUE CyberTAMAGO</span>
-            <span class="t-title"> — KaliPAKU</span>
-          </a>
-        </div>
-        <div class="talk">
-          <span class="t-flag">🇯🇵</span>
-          <a href="https://cybertamago.org/tools_ja.php#bocchi" class="t-link" target="_blank" rel="noopener">
-            <span class="t-conf">CODEBLUE CyberTAMAGO</span>
-            <span class="t-title"> — BOCCHI</span>
-          </a>
-        </div>
-        <div class="talk">
-          <span class="t-flag">🇯🇵</span>
-          <a href="https://www.avtokyo.org/avtokyo2023/events" class="t-link" target="_blank" rel="noopener">
+          <a href="https://www.avtokyo.org/avtokyo2023/timetable" class="t-link" target="_blank" rel="noopener">
             <span class="t-conf">AVTOKYO HIVE</span>
             <span class="t-title"> — BOCCHI</span>
           </a>
         </div>
         <div class="talk">
           <span class="t-flag">🇯🇵</span>
-          <a href="https://www.seccon.jp/2023/ep231223.html#d1-t8" class="t-link" target="_blank" rel="noopener">
-            <span class="t-conf">SECCON Open Conf 2023</span>
+          <a href="https://www.seccon.jp/2023/ep231223.html" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">SECCON Open Conference 2023</span>
             <span class="t-title"> — BOCCHI</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://cybertamago.org/#:~:text=BOCCHI%20%2D%20Bot%20Operating%20Chat%20Communication%20Hacking%20Interface" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">CODE BLUE CyberTAMAGO</span>
+            <span class="t-title"> — BOCCHI</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://www.seccon.jp/2022/ep230211.html" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">SECCON Open Conference 2022</span>
+            <span class="t-title"> — KaliPAKU</span>
+          </a>
+        </div>
+        <div class="talk">
+          <span class="t-flag">🇯🇵</span>
+          <a href="https://cybertamago.org/#:~:text=bivvy-,KaliPAKU,-Techniques%20to%20Combat" class="t-link" target="_blank" rel="noopener">
+            <span class="t-conf">CODE BLUE CyberTAMAGO</span>
+            <span class="t-title"> — KaliPAKU</span>
           </a>
         </div>
       </div>
@@ -856,7 +931,7 @@
           <span class="t-flag">🇯🇵</span>
           <a href="https://www.avtokyo.org/2020/event" class="t-link" target="_blank" rel="noopener">
             <span class="t-conf">AVTOKYO HIVE</span>
-            <span class="t-title"> — PAKURI2</span>
+            <span class="t-title"> — PAKURI</span>
           </a>
         </div>
       </div>
@@ -867,15 +942,8 @@
       <div class="talk-list">
         <div class="talk">
           <span class="t-flag">🇯🇵</span>
-          <a href="https://en.avtokyo.org/avtokyo2019/event" class="t-link" target="_blank" rel="noopener">
+          <a href="https://ja.avtokyo.org/avtokyo2019/event" class="t-link" target="_blank" rel="noopener">
             <span class="t-conf">AVTOKYO HIVE</span>
-            <span class="t-title"> — PAKURI</span>
-          </a>
-        </div>
-        <div class="talk">
-          <span class="t-flag">🇯🇵</span>
-          <a href="https://www.seccon.jp/2019/akihabara/#yorozu" class="t-link" target="_blank" rel="noopener">
-            <span class="t-conf">SECCON YOROZU</span>
             <span class="t-title"> — PAKURI</span>
           </a>
         </div>
@@ -921,17 +989,24 @@
   <h2 class="section-title">about</h2>
   <div class="about-box">
     <p>
-      I am an <strong>independent security researcher</strong> and former penetration tester who now
-      develops security tools as a personal research endeavor. My work has been showcased at conferences
-      including <strong>Black Hat Asia Arsenal</strong>, <strong>BSides Tokyo</strong>, <strong>SECCON</strong>,
-      and more recently at <strong>BSides Las Vegas</strong>, <strong>Black Hat USA Arsenal</strong>,
-      and <strong>SecTor Arsenal</strong>.
+      I am an <strong>independent security researcher</strong> and open-source security tool developer
+      focused on defensive security, deception, constrained SOC/NOC operations, and coercion-aware security design.
+      My work turns offensive experience into defensive tools that buy time, preserve visibility, and make attackers
+      waste effort in carefully controlled places.
     </p>
     <br>
     <p>
-      All of this activity is self-funded — which means the more I speak around the world, the more my
-      bank account suffers. As my follower count on X rises, so does my alcohol consumption, and that's
-      probably the most consistent metric in my career.
+      I build systems such as <strong>Azazel System</strong>, a cyber scapegoat gateway for delaying action
+      and deception-aware edge defense; <strong>Phasmid</strong>, a coercion-aware local storage project;
+      and earlier pentesting support tools including <strong>PAKURI</strong>, <strong>KaliPAKU</strong>,
+      <strong>BOCCHI</strong>, and <strong>Babbly</strong>.
+    </p>
+    <br>
+    <p>
+      These projects have appeared at conferences including <strong>Black Hat Arsenal</strong>,
+      <strong>BSides Las Vegas</strong>, <strong>BSides Tokyo</strong>, <strong>SECCON</strong>,
+      <strong>AVTOKYO</strong>, <strong>CODE BLUE</strong>, and <strong>SecTor</strong>.
+      The research is mostly self-funded, which proves two things: the tools are portable, and so are the bills.
     </p>
   </div>
 </section>
@@ -956,12 +1031,12 @@
 </section>
 
 <footer>
-  <span>01rabbit</span> · Makoto Sugita · Independent Security Researcher
+  <span>01rabbit</span> · Makoto Sugita · Mr.Rabbit · Independent Security Researcher
 </footer>
 
 <script>
   (function () {
-    const words = ['Mr.Rabbit', 'Security Researcher', 'Tool Developer', 'Mr.Rabbit'];
+    const words = ['Mr.Rabbit', 'Security Researcher', 'Tool Developer', 'Defensive Tool Builder'];
     let wi = 0, ci = 0, del = false;
     const el = document.getElementById('typewriter');
 
